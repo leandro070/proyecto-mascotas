@@ -217,6 +217,7 @@ Mascota
   "name": "Nombre de la mascota",
   "description": "Descripción de la mascota",
   "user": "Id de usuario",
+  "picture": "Foto de la mascota",
   "birthDate": date (DD/MM/YYYY),
   "updated": date (DD/MM/YYYY),
   "created": date (DD/MM/YYYY),
@@ -292,6 +293,7 @@ Mascota
   "name": "Nombre de la mascota",
   "description": "Descripción de la mascota",
   "user": "Id de usuario",
+  "picture": "Foto de la mascota",
   "birthDate": date (DD/MM/YYYY),
   "updated": date (DD/MM/YYYY),
   "created": date (DD/MM/YYYY),
@@ -346,7 +348,7 @@ HTTP/1.1 Header X-Status-Reason: {Message}
 
 <p>Crea una mascota.</p>
 
-	POST /pet
+	POST /message
 
 
 
@@ -376,6 +378,7 @@ Mascota
   "name": "Nombre de la mascota",
   "description": "Descripción de la mascota",
   "user": "Id de usuario",
+  "picture": "Foto de la mascota",
   "birthDate": date (DD/MM/YYYY),
   "updated": date (DD/MM/YYYY),
   "created": date (DD/MM/YYYY),

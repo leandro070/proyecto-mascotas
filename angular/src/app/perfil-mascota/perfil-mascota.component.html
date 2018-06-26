@@ -1,0 +1,31 @@
+<div class="jumbotron jumbotron-fluid" *ngIf="mascota">
+  <h2>{{mascota.name}}</h2>
+  <div class="rounded-bottom">
+    <file-upload name="imagen" allowedTypes="image/*" uploadButtonText="Upload File" [ngModel]="imagen.image"
+      (ngModelChange)="actualizarImagen($event)"></file-upload>
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="input-group textarea-status">
+          <textarea class="form-control" aria-label="With textarea" [(ngModel)]="mensaje" placeholder="¿En que estas pensando?"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="sendMessage()">Publicar</button>
+      </div>
+    </div>
+    <div class="card" style="text-align: left">
+      <div class="card-body" *ngFor="let mensaje of mensajes">
+        <h4>
+          <div class="little-rounded-bottom">
+              <file-upload name="imagen" allowedTypes="image/*" uploadButtonText="Upload File" [ngModel]="imagen.image"
+      (ngModelChange)="actualizarImagen($event)"></file-upload>
+          </div><strong>{{mascota.name}}</strong>
+        </h4>
+        <p>{{mensaje.message}}</p>
+        <div class="divisor"></div>
+      </div>
+
+    </div>
+  </div>

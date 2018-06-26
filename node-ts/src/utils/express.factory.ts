@@ -17,6 +17,7 @@ import * as provinciasModule from "../provinces/module";
 import * as seguridadModule from "../security/module";
 import * as passportHandler from "../security/passport";
 import * as errorHandler from "../utils/error.handler";
+import * as messageModule from "../messages/module";
 import { Config } from "./environment";
 
 
@@ -75,7 +76,7 @@ export function init(appConfig: Config): express.Express {
   provinciasModule.init(app);
   seguridadModule.init(app);
   imageModule.init(app);
-
+  messageModule.init(app);
   // Para el manejo de errores, para que los loguee en la consola
   app.use(errorHandler.logErrors);
 

@@ -99,10 +99,6 @@ export function validateUpdate(req: IUpdateRequest, res: express.Response, next:
     req.check("phone", "No es válido").isLength({ min: 1, max: 32 });
     req.sanitize("phone").escape();
   }
-  if (req.body.picture) {
-    req.sanitize("picture").escape();
-  }
-
   req.getValidationResult().then(function (result) {
     if (!result.isEmpty()) {
       return errorHandler.handleExpressValidationError(res, result);

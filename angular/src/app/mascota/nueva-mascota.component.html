@@ -25,6 +25,11 @@
     </div>
 
     <div class="form-group">
+        <label>Foto:</label>
+        <file-upload name="imagen" allowedTypes="image/*" uploadButtonText="Upload File" [ngModel]="image.image" (ngModelChange)="actualizarImagen($event)"></file-upload>
+    </div>
+
+    <div class="form-group">
         <label>Descripcion:</label>
         <input type="text" class="form-control" name="description" [class.errorBorder]="errors['description']" [(ngModel)]="mascota.description" required [minlength]="3" [maxLength]="60">
 

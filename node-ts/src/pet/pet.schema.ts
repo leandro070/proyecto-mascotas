@@ -6,6 +6,7 @@ export interface IPet extends mongoose.Document {
   name: string;
   birthDate: Date;
   description: string;
+  picture: string;
   user: mongoose.Schema.Types.ObjectId;
   updated: Number;
   created: Number;
@@ -26,6 +27,10 @@ export let PetSchema = new mongoose.Schema({
     type: Date,
     default: "",
     trim: true
+  },
+  picture: {
+    type: String,
+    ref: "Image"
   },
   description: {
     type: String,

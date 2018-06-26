@@ -4,7 +4,7 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from "@angular/f
 @Component({
     selector: "file-upload",
     template: `
-        <img [src]="image" height="100" (click)="click()" />
+        <img [src]="image" height="100%" (click)="click()" />
         <input type="file" #fileInput class="upload" accept="*" (change)="changeListener($event)" style="display:none;" />
         `,
     providers: [

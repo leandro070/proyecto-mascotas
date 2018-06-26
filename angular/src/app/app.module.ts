@@ -18,6 +18,10 @@ import { FileUploadComponent } from "./tools/image.base64";
 import { RegistrarUsuarioComponent } from "./usuario/registrar-usuario.component";
 import { UsuarioService } from "./usuario/usuario.service";
 import { WelcomeComponent } from "./welcome/welcome.component";
+import { PerfilMascotaComponent } from "./perfil-mascota/perfil-mascota.component";
+import { PerfilMascotaService } from "./perfil-mascota/perfil-mascota.service";
+import { MessageService } from "./perfil-mascota/message.service";
+import { MensajesMascotasComponent } from "./mensajes-mascotas/mensajes-mascotas.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +32,9 @@ import { WelcomeComponent } from "./welcome/welcome.component";
     MenuComponent,
     NuevaMascotaComponent,
     RegistrarUsuarioComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    PerfilMascotaComponent,
+    MensajesMascotasComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,8 @@ import { WelcomeComponent } from "./welcome/welcome.component";
     ProvinciaService,
     PerfilService,
     LoggedIn,
+    PerfilMascotaService,
+    MessageService,
     /* Los providers son @Inyectable, la siguiente es una forma de definir un
      provider con un valor constante para poder inyectarlo*/
     { provide: APP_BASE_HREF, useValue: environment.baseHref }

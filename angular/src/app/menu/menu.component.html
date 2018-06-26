@@ -13,6 +13,10 @@
 		</label>
     </div>
 
+    <div class='inlineContent menu' *ngIf="usuarioLogueado">
+        <input type="button" class="menuButton" [routerLink]="['/mensajesMascotas']" value="Mensajes de Mascotas" />
+    </div>
+
     <form name="form" [formGroup]="loginForm" *ngIf="!usuarioLogueado">
         <div class='inlineContent'>
             <label> Login </label>

@@ -4,6 +4,7 @@ import * as esLocale from "date-fns/locale/es";
 import * as errorHandler from "../tools/error-handler";
 import { IErrorController } from "../tools/error-handler";
 import { Mascota, MascotaService } from "./mascota.service";
+import { Image } from "../perfil-mascota/perfil-mascota.service";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class NuevaMascotaComponent implements OnInit, IErrorController {
   mascota: Mascota;
   arLocale = esLocale;
   formSubmitted: boolean;
-
+  image: Image;
   errorMessage: string;
   errors: string[] = [];
 
@@ -28,7 +29,11 @@ export class NuevaMascotaComponent implements OnInit, IErrorController {
       _id: undefined,
       name: "",
       birthDate: "",
-      description: ""
+      description: "",
+      picture: ""
+    };
+    this.image = {
+      image: "/assets/loading.gif",
     };
   }
 
@@ -45,6 +50,13 @@ export class NuevaMascotaComponent implements OnInit, IErrorController {
             errorHandler.procesarValidacionesRest(this, error);
           });
       }
+    });
+  }
+
+  actualizarImagen(imagen: any) {
+    this.image.image = imagen;
+    this.mascotasService.guardarImagen(this.image).then((data) => {
+      this.mascota.picture = data.id;
     });
   }
 

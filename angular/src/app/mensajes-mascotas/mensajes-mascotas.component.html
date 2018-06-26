@@ -1,0 +1,18 @@
+<div class="jumbotron jumbotron-fluid" >
+<h1>MENSAJES!</h1>
+</div>
+    <div class="container">
+      <div class="card" style="text-align: left" *ngIf="mensajes && mascotas">
+        <div class="card-body" *ngFor="let mensaje of mensajes">
+          <h4>
+            <div class="little-rounded-bottom">
+                <file-upload name="imagen" allowedTypes="image/*" uploadButtonText="Upload File" [ngModel]="imagen.image"
+        (ngModelChange)="actualizarImagen($event)"></file-upload>
+            </div><strong>{{mascota.name}}</strong>
+          </h4>
+          <p>{{mensaje.message}}</p>
+          <div class="divisor"></div>
+        </div>
+
+      </div>
+    </div>
